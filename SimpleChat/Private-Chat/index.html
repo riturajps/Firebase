@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body id="body">
+<select name="Room Selection" id="roomSelection" onclick="changeRoom('default')">
+    <option value="Select a Room" selected>Select a Room</option>
+<option value="Main/">Main</option>
+<option value="Other/">Other</option>
+<option value="Tech/">Tech</option>
+<option value="Science/">Science</option>
+</select>
+  or enter a room key:
+ <input type="text" id="roomKey" value="" onkeypress="checkKey2(event)">
+<button type="button" onclick="changeRoom('')">Ok</button>
+<br>
+<div id="header">
+</div>
+    <p id="page"></p>
+  <script type='text/javascript' src='config.js'></script>
+<script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-database.js"></script>
+    <script src="chat.js">
+    </script>
+    <div id="input">
+Message:<input type="text" id="message" value="" onkeypress="checkKey(event)">
+<button type="button" onclick="chat()">Send</button>
+   </div>
+</body>
+</html>

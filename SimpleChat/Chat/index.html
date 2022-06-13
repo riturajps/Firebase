@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="styles.css" />
+
+    <title>Morgan's Chat</title>
+  </head>
+  <body>
+    <!-- container & title -->
+    <div class="container my-4">
+      <h1 class="my-4 text-center">Toliet Chat</h1>
+      <!-- buttons for chatrooms -->
+      <div class="chat-rooms mb-3 text-center">
+        <div class="my-2">Choose a chatroom:</div>
+        <button class="btn" id="general">#general</button>
+        <button class="btn" id="gaming">#invesco</button>
+        <button class="btn" id="music">#compliance</button>
+        <button class="btn" id="work">#weekend</button>
+      </div>
+      <!-- chat list / window -->
+      <div class="chat-window">
+        <ul class="chat-list list-group"></ul>
+      </div>
+      <!-- new chat form -->
+      <form class="new-chat my-3">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <div class="input-group-text">Your message:</div>
+          </div>
+          <input type="text" id="message" class="form-control" required />
+          <div class="input-group-append">
+            <input type="submit" class="btn" value="send" />
+          </div>
+        </div>
+      </form>
+      <!-- update name form -->
+      <form class="new-name my-3">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <div class="input-group-text">Update name:</div>
+          </div>
+          <input type="text" id="name" class="form-control" required />
+          <div class="input-group-append">
+            <input type="submit" class="btn" value="update" />
+          </div>
+        </div>
+        <div class="update-mssg"></div>
+      </form>
+    </div>
+    <script src="http://cdn.date-fns.org/v1.9.0/date_fns.min.js"></script>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-firestore.js"></script>
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-analytics.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyC6_7CsHDFqqCU4k1BXxCLYAG7FdATAFv0",
+        authDomain: "chatroom-aa369.firebaseapp.com",
+        databaseURL: "https://chatroom-aa369.firebaseio.com",
+        projectId: "chatroom-aa369",
+        storageBucket: "chatroom-aa369.appspot.com",
+        messagingSenderId: "187905812946",
+        appId: "1:187905812946:web:9698e5e6f5155456fcc00b",
+        measurementId: "G-2KB3PYFNVP"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+      const db = firebase.firestore();
+    </script>
+
+    <script src="chat.js"></script>
+    <script src="ui.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

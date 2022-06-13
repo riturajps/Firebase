@@ -1,0 +1,49 @@
+<html>
+<head>
+  <title>Firebase Login</title>
+  <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+	<div id="login_div" class="admin-div">
+    <h3>RituRajPS | Web login </h3>
+    <input type="email" placeholder="Email..." id="email_field" class="input-email" />
+    <input type="password" placeholder="Password..." id="password_field" class="input-pass"/>
+  <button onclick="login()" class="login-btn">Login to Account</button>
+    <br>
+  <button onclick="create_account()" class="reg-btn">Create Account</button>
+  </div>
+
+
+  <div id="user_div" class="account-div">
+    <h3>Welcome User</h3>
+    <p id="user_para">Welcome to Firebase web login Example. You're currently logged in.</p>
+    <button onclick="logout()" class="logout-btn">Logout</button>  
+    <br>
+    <button id="verify_btn" onclick="verify()" class="verify-btn">Send Verification</button>  
+     </div>
+
+  <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+<script>
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  var firebaseConfig = {
+    apiKey: "AIzaSyAS7jpXkSkQimFVxqh4KB9JJWAVwYeLQMc",
+  authDomain: "riturajps-official.firebaseapp.com",
+  projectId: "riturajps-official",
+  databaseURL: "https://riturajps-official-default-rtdb.firebaseio.com",
+  storageBucket: "riturajps-official.appspot.com",
+  messagingSenderId: "290350549856",
+  appId: "1:290350549856:web:ffa18e4491fdc366536c05",
+  measurementId: "G-B5PVWMJSYG"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
+
+  <script src="js/index.js"></script>
+
+</body>
+</html>

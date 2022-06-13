@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>google phone auth</title>
+	</head>
+	<body>
+		<script defer src='/firebase/firebase-app.js'></script>
+		<script defer src='/firebase/firebase-auth.js'></script>
+		<script defer src='/firebase/init.js'></script>
+		<script defer src='/phone-auth.js'></script>
+<style>
+  #phone-number,#verification-code{
+    padding: 8px 50px;
+    display: block;
+    margin: 0 auto;
+    font-size: 1em;
+    text-align: center;
+    margin-top: 40%;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    border: 2px solid red;
+    box-shadow: 1px 1px 8px 3px blue;
+  }
+ #note{
+   text-align: center;
+   margin-top: 2%;
+ } 
+  #verification-code-form{
+    display: none;
+  }
+  #sign-out-button{
+    display: none;
+  }
+  #sign-in-button,#verify-code-button{
+    display: block;
+    margin: 0 auto;
+    padding: 5px 25px;
+    border: 2px solid red;
+    font-size: 1em;
+    margin-top: 5%;
+    color: #fff;
+    text-transform: uppercase;
+    background-color: dodgerblue;
+  }
+  #sign-out-button{
+    display:block;
+    margin: 0 auto;
+    padding: 5px 25px;
+    border-radius: 25px;
+    background-color: dodgerblue;
+    color: #fff;
+    border: 2px solid red;
+    font-size: 1em;
+    text-transform: uppercase;
+  }
+</style>
+		<form id='sign-in-form' action='#' autocomplete='off'>
+<input type='text' id='phone-number' placeholder='Enter Number'>
+   <p id='note'> Eg. +91 1504200200</p>
+			<input disabled type='submit'  id='sign-in-button' value='get-otp' />
+		</form>
+		
+		
+		<form disabled id='verification-code-form' action='#' autocomplete='off'>
+			<input type='text' id='verification-code'>
+			<input type='submit' id='verify-code-button' value='verify'/>&nbsp
+			<button id='cancel-verify-code-button'>cancel</button>
+		</form>
+		
+		<form disabled id='sign-out-form' action='#'>
+			<button id='sign-out-button'>sign-out</button>
+		</form>
+		
+	</body>
+</html>

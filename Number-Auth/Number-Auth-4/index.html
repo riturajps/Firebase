@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-auth.js"></script>
+    <title>Phone Number Authentication</title>
+       <script>
+  var firebaseConfig = {
+    apiKey: "AIzaSyACQt1Pjguy-CTS-pcinwteelWwYyyOC0I",
+    authDomain: "riturajps-india.firebaseapp.com",
+    databaseURL: "https://riturajps-india-default-rtdb.firebaseio.com",
+    projectId: "riturajps-india",
+    storageBucket: "riturajps-india.appspot.com",
+    messagingSenderId: "687184088066",
+    appId: "1:687184088066:web:74c32ef6bf775a9500eb1b",
+    measurementId: "G-ZXRRJ8R1KC"
+  };
+  firebase.initializeApp(firebaseConfig);
+</script>
+</head>
+<body>
+<style>
+@font-face {
+  font-family: 'Quantico';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/quantico/v10/rax-HiSdp9cPL3KIF7xrJD1wmULY.woff2) format('woff2');
+}
+#number{
+    display: block;
+    margin: 0 auto;
+    border: none;
+    outline: none;
+    border-bottom: solid 2px #111;
+    background: transparent;
+    font-size: 1em;
+    text-align: center;
+    padding: 5px 25px;
+    color: #111;
+    text-transform: uppercase;
+    font-family: Quantico;
+    font-weight: bold;
+}
+#code{
+    display: block;
+    margin: 0 auto;
+    border: none;
+    outline: none;
+    border-bottom: solid 2px #111;
+    background: transparent;
+    font-size: 1em;
+    text-align: center;
+    padding: 2px 5px;
+    color: #111;
+    text-transform: uppercase;
+    font-family: Quantico;
+    font-weight: bold;
+}
+#recaptcha-container{
+    border: 2px solid #111;
+    font-family: Quantico;
+    height: 76.5px;
+    width: 302px;
+    border-radius: 6px;
+    margin: 0 auto;
+    display: block;
+}
+.rrps{
+  margin-top: 30%;
+  text-align: center;
+}
+.note{
+  margin-top: 1%;
+  font-family: Quantico;
+}
+#sign-in-button{
+    background: #e50035;
+    padding: 3px 10px;
+    font-size: 1.2em;
+    margin-top: 10px;
+    border-radius: 5px;
+    font-family: Quantico;
+    margin: 0 auto;
+    display: block;
+    color: white;
+    border-color: #111;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+</style>
+
+<div class="rrps">
+ <input type="text" id="number" placeholder="Mobile Number"/>
+ <h5 class="note">
+ <p>Must Be 10 Digits Number</p>
+ <p>Start With Country Code ( eg.+91********37 )</p>
+ </h5>
+        <div id="recaptcha-container"></div>
+       <br>
+       <button id="sign-in-button" onclick="firebaseAuth()">Get OTP</button><br><br><br><br>
+        <input type="number" id="code" placeholder="Enter OTP" /><br>
+        <button id="sign-in-button" onclick="codeAuth()">Verify & Proceed</button>
+      </div>
+   
+</body>
+<script src="app.js"></script>
+</html>
