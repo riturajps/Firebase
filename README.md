@@ -1,5 +1,7 @@
 # Firebase
-![Repo Size](https://img.shields.io/github/languages/code-size/riturajps/firebase)
+
+![](https://img.shields.io/github/repo-size/TheComingEra/firebase?style=for-the-badge&logo=github)
+
 
 [Private-Chat](https://riturajps-firebase.netlify.app/SimpleChat/Private-Chat)
 
