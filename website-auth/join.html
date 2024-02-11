@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <title>qr login</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+  <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container-fluid">
+
+          <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+                  aria-expanded="false">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+              </button>
+    <a class="navbar-brand" href="index.html">Ritu Raj Pratap Singh</a>
+          </div>
+
+
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul class="nav navbar-nav">
+                   <li>
+          <a href="index.html">HOME</a>
+                  </li>
+                  <li class="active">
+          <a id="joinmenu" href="join.html">Join</a>
+                  </li>
+                  <li>
+         <a id="loginmenu" href="login.html">Login</a>
+                  </li>
+              </ul>
+          </div>
+
+      </div>
+
+  </nav>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+
+
+
+
+<div class="container">
+    <center><h2>Welcome</h2></center>
+
+         <form id="clear">
+            <p>Email : <input  id="email" type="email"></p>
+            <p>Password : <input  id="password" type="password"></p>
+            <input type="button" value="SignUp" onclick="signUp()">
+         </form>
+
+</div>
+
+
+
+  <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js"></script>
+  <script>
+    // Your web app's Firebase configuration
+var firebaseConfig = {
+
+      apiKey: "AIzaSyACQt1Pjguy-CTS-pcinwteelWwYyyOC0I",
+      authDomain: "riturajps-india.firebaseapp.com",
+      databaseURL: "https://riturajps-india-default-rtdb.firebaseio.com",
+      projectId: "riturajps-india",
+      storageBucket: "riturajps-india.appspot.com",
+      messagingSenderId: "687184088066",
+      appId: "1:687184088066:web:74c32ef6bf775a9500eb1b",
+      measurementId: "G-ZXRRJ8R1KC"
+};
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+const auth = firebase.auth();
+
+function signUp() {
+    var user = auth.currentUser;
+        var email = document.getElementById("email");
+        var password = document.getElementById("password");
+        auth.createUserWithEmailAndPassword(email.value, password.value).catch(e => alert(e.message));
+        alert("SignUp Succesful");
+    }
+//}
+  </script>
+
+
+</body>
+</html>
